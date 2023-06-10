@@ -171,15 +171,3 @@ class Predictor():
         return result, heatMapImage
 
 
-if __name__ == "__main__":
-    pathInfo = {
-        "modelPath": "/data/sungmin/vgg16",
-        "weightPath": "/data/sungmin/vgg16/weight",
-    }
-
-    img = cv2.imread("/data/sungmin/vgg16/sample/catdog/cat.1.jpg")
-    p = Predictor(pathInfo)
-
-    # while True:
-    predResult, heatMapImage = p.runPredict(img)
-    cv2.imwrite("./heatmap.png", heatMapImage)
